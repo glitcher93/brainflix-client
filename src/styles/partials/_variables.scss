@@ -1,0 +1,54 @@
+@use './functions' as *;
+
+// Colors
+$brainflix-black: #323232;
+$brainflix-blue: #0095FF;
+$silver: #AFAFAF;
+$white: #FFF;
+$brainflix-dark-black: #000;
+$brainflix-dark-blue: #0065AD;
+$mercury: #E1E1E1;
+$alabaster: #FAFAFA;
+
+// Color-Specific Variables
+$heading: $brainflix-black;
+$button: $brainflix-blue;
+$button-hover: $brainflix-dark-blue;
+$button-text: $white;
+$placeholder: $brainflix-dark-black;
+$secondary-header: $silver;
+$border-avatar: $mercury;
+$form-background: $alabaster;
+$form-focus: $brainflix-blue;
+$cancel-link: $brainflix-blue;
+$channel-name: $brainflix-dark-black;
+$video-background: $brainflix-dark-black;
+$delete-button: $mercury;
+
+// Font-Family
+$font: 'Avenir Next';
+
+// Font-Sizes
+$page-header: toRem(24);
+$section-header: toRem(12);
+$sub-header: toRem(13);
+$body: toRem(13);
+$labels-buttons: toRem(12);
+$responsive-page-header: toRem(33);
+$responsive-sub-header: toRem(14);
+$responsive-body: toRem(14);
+$responsive-section-header: toRem(12);
+$responsive-labels-buttons: toRem(12);
+
+// Font-Weight
+$normal: normal;
+$demi: 600;
+$bold: 700;
+
+// Padding
+$pre-headline: toRem(24);
+$post-headline: toRem(16);
+$component-pad: toRem(16);
+$responsive-pre-headline: toRem(36);
+$responsive-post-headline: toRem(24);
+$responsive-component-pad: toRem(24);

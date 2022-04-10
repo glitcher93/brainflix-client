@@ -1,0 +1,36 @@
+@use './variables' as *;
+@use './functions' as *;
+
+// Responsive Mixins
+
+@mixin tablet {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 1280px) {
+        @content;
+    }
+}
+
+// Custom Mxins
+
+@mixin wrapper {
+    max-width: 1064px;
+    margin: 0 auto;
+}
+
+@mixin avatar-stack {
+    height: toRem(36);
+    width: toRem(36);
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 0.1px;
+}
+
+@mixin main-wrapper {
+    max-width: 1064px;
+    margin: 0 auto;
+}
