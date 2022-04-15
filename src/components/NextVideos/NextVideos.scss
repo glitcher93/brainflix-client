@@ -1,0 +1,31 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/functions' as *;
+
+.next-videos {
+    
+    &__wrapper {
+        padding: 0 $component-pad;
+
+        @include tablet {
+            padding: 0 toRem(36);
+        }
+
+        @include desktop {
+            padding: 0 $responsive-component-pad toRem(36);
+            border-left: 1px solid $border-avatar;
+        }
+    }
+
+    &__title {
+        font-size: $section-header;
+        font-weight: $demi;
+        text-transform: uppercase;
+        color: $secondary-header;
+        padding: $pre-headline 0 $pre-headline;
+
+        @include desktop {
+            padding: $responsive-pre-headline 0 $responsive-component-pad;
+        }
+    }
+}
