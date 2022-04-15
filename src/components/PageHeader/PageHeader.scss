@@ -1,0 +1,121 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/functions' as *;
+
+.header {
+    border-bottom: 1px solid $border-avatar;
+    
+    &__wrapper {
+        padding: 0 toRem(16);
+
+        @include tablet {
+            padding: $responsive-component-pad toRem(36);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @include desktop {
+            padding: $responsive-component-pad 0;
+            @include wrapper;
+        }
+    }
+
+    &__container-left {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__title {
+        height: toRem(25);
+        margin: $component-pad 0;
+        
+        @include tablet {
+            margin: 0 $responsive-component-pad;
+        }
+
+        &--logo {
+            height: toRem(25);
+            width: toRem(120);
+        }
+    }
+
+    &__container-right {
+        @include tablet {
+            display: flex;
+            align-items: center;
+            margin-right: $responsive-component-pad;
+        }
+    }
+
+    &__image {
+        @include avatar-stack;
+
+        @include tablet {
+            height: toRem(40);
+            width: toRem(40);
+            margin-left: $responsive-component-pad;
+        }
+
+        &--mobile {
+            @include tablet {
+                display: none;
+            }
+        }
+
+        &--tablet {
+            display: none;
+
+            @include tablet {
+                display: block;
+            }
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+    }
+}
+
+.header-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 $component-pad;
+    @include tablet {
+        padding: 0 0 0 0;
+    }
+
+    &__input {
+        display: flex;
+        align-items: center;
+        font-family: $font;
+        font-size: $body;
+        background-color: $form-background;
+        height: toRem(36);
+        width: 100%;
+        border-radius: 4px;
+        padding: toRem(12) toRem(12) toRem(12) toRem(36);
+        background-image: url('../../assets/icons/search.svg');
+        background-repeat: no-repeat;
+        background-position: 10px;
+        border: 1px solid $border-avatar;
+        margin-right: $component-pad;
+
+        @include tablet {
+            font-size: $responsive-labels-buttons;
+            padding: toRem(16) toRem(16) toRem(16) toRem(36);
+            height: toRem(40);
+            width: toRem(240);
+        }
+
+        &:focus {
+            outline: none;
+            border: 2px solid $form-focus;
+        }
+
+        &::placeholder {
+            color: $placeholder;
+        }
+    }
+}
