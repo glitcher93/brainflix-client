@@ -1,0 +1,40 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/functions' as *;
+
+.cta {
+    font-family: $font;
+    font-weight: $demi;
+    font-size: $labels-buttons;
+    color: $button-text;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: toRem(40);
+    border-radius: 4px;
+    text-transform: uppercase;
+    background-color: $button;
+    padding: 0 toRem(32);
+    margin: 0 0 $component-pad;
+    position: relative;
+    transition: background-color 0.3s;
+    border: none;
+    
+    @include tablet {
+        font-size: $responsive-labels-buttons;
+        margin: 0 0 0 $responsive-component-pad;
+        width: toRem(150);
+    }
+
+    &__icon {
+        position: absolute;
+        left: 10px;
+        height: toRem(20);
+    }
+
+    &:hover {
+        cursor: pointer;
+        background-color: $button-hover;
+    }
+}
