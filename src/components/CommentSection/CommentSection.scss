@@ -1,0 +1,32 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/functions' as *;
+
+.comment-section {
+    
+    &__wrapper {
+        padding: 0 $component-pad;
+
+        @include tablet {
+            padding: 0 toRem(36);
+        }
+
+        @include desktop {
+            padding: 0;
+            @include wrapper;
+        }
+    }
+
+    &__title {
+        font-size: $sub-header;
+        font-weight: $demi;
+        color: $heading;
+        padding: $pre-headline 0 $post-headline;
+
+        @include tablet {
+            font-size: $responsive-sub-header;
+            font-weight: $bold;
+            padding: $responsive-pre-headline 0 $responsive-post-headline;
+        }
+    }
+}
