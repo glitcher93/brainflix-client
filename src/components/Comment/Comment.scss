@@ -1,0 +1,107 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/functions' as *;
+
+.comment-section {
+    &__comment {
+        display: flex;
+        padding: $component-pad 0;
+        border-bottom: 1px solid $border-avatar;
+
+        @include tablet {
+            padding: $responsive-component-pad 0;
+        }
+
+        @include desktop {
+            padding-right: $responsive-component-pad;
+        }
+
+        &:last-child {
+            @include desktop {
+                border-bottom: none;
+            }
+        }
+    }
+
+    &__img-button-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        padding-right: $component-pad;
+
+        @include tablet {
+            padding-right: $responsive-component-pad;
+        }
+
+        @include desktop {
+            padding-right: toRem(36);
+        }
+    }
+
+    &__image {
+        @include avatar-stack;
+        margin-bottom: toRem(10);
+
+        @include tablet {
+            height: toRem(40);
+            width: toRem(40);
+        }
+    }
+
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: toRem(40);
+        height: toRem(30);
+        background-color: $delete-button;
+        border: none;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+
+        &:hover {
+            cursor: pointer;
+            background-color: #C1C1C1;
+        }
+    }
+
+    &__comment-text {
+        width: 100%;
+    }
+
+    &__comment-headings {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: $component-pad;
+    }
+
+    &__commenter {
+        font-size: $sub-header;
+        font-weight: $demi;
+        color: $heading;
+
+        @include tablet {
+            font-size: $responsive-sub-header;
+        }
+    }
+
+    &__date {
+        font-size: $sub-header;
+        color: $secondary-header;
+
+        @include tablet {
+            font-size: $responsive-sub-header;
+        }
+    }
+
+    &__paragraph {
+        font-size: $body;
+        line-height: 1.5;
+
+        @include tablet {
+            font-size: $responsive-body;
+        }
+    }
+}
