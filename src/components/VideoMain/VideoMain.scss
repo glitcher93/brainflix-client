@@ -1,0 +1,17 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/functions' as *;
+
+
+.main-container {
+    @include desktop {
+        @include main-wrapper;
+        display: flex;
+    }
+
+    &__left {
+        @include desktop {
+            width: 100%;
+        }
+    }
+}
