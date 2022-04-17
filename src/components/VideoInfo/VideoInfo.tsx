@@ -2,10 +2,23 @@ import views from '../../assets/icons/views.svg';
 import likes from '../../assets/icons/likes.svg';
 import './VideoInfo.scss';
 import { timeSince } from '../../utils/utils';
-import { VideoSectionProps } from '../../utils/interfaces';
+import { VideoInfoProps } from '../../utils/interfaces';
+import axios from 'axios';
 
-function VideoInfo({ currentVideo }: VideoSectionProps) {
+function VideoInfo({ currentVideo, getVideoById }: VideoInfoProps) {
 
+    const putLike = (id: string) => {
+        axios
+            .put(`http://localhost:8085/videos/${id}/likes`)
+            .then(() => {
+                getVideoById(id)
+            })
+            .catch(err => console.log(err));
+    }
+
+    const handleClick = () => {
+        putLike(currentVideo!.id)
+    }
 
     return (
         <section className="video-info">
@@ -37,9 +50,7 @@ function VideoInfo({ currentVideo }: VideoSectionProps) {
                             className="video-info__image video-info__image--likes"
                             src={likes}
                             alt="Likes"
-                            onClick={() => {
-                                
-                            }}
+                            onClick={handleClick}
                             />
                             <p className="video-info__paragraph">
                                 {currentVideo!.likes}
