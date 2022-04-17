@@ -53,7 +53,7 @@ function VideoInfo({ currentVideo, getVideoById }: VideoInfoProps) {
                             onClick={handleClick}
                             />
                             <p className="video-info__paragraph">
-                                {currentVideo!.likes}
+                                {currentVideo!.likes.toLocaleString()}
                             </p>
                         </div>
                     </div>
