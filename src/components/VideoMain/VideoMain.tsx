@@ -16,6 +16,7 @@ function VideoMain({ videoDetails, currentVideo, comments, getVideoById }: MainP
                 <div className="main-container__left">
                     <VideoInfo
                     currentVideo={currentVideo}
+                    getVideoById={getVideoById}
                     />
                     <CommentSection 
                     comments={comments}
