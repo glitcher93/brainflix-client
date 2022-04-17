@@ -37,6 +37,11 @@ export interface VideoSectionProps {
     currentVideo: VideoObject | undefined
 }
 
+export interface VideoInfoProps {
+    currentVideo: VideoObject | undefined
+    getVideoById: (id: string) => void
+}
+
 export interface CommentSectionProps {
     currentVideo: VideoObject | undefined
     comments: CommentObject[] | undefined
