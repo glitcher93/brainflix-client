@@ -1,7 +1,7 @@
 import views from '../../assets/icons/views.svg';
 import likes from '../../assets/icons/likes.svg';
 import './VideoInfo.scss';
-import { timeSince } from '../../utils/utils';
+import { apiURL, timeSince } from '../../utils/utils';
 import { VideoInfoProps } from '../../utils/interfaces';
 import axios from 'axios';
 
@@ -9,7 +9,7 @@ function VideoInfo({ currentVideo, getVideoById }: VideoInfoProps) {
 
     const putLike = (id: string) => {
         axios
-            .put(`http://localhost:8085/videos/${id}/likes`)
+            .put(`${apiURL}/videos/${id}/likes`)
             .then(() => {
                 getVideoById(id)
             })

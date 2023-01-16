@@ -1,6 +1,6 @@
 import placeholder from '../../assets/images/avatar-placeholder.png';
 import deleteIcon from '../../assets/icons/icon-delete.svg';
-import {timeSince} from '../../utils/utils';
+import {apiURL, timeSince} from '../../utils/utils';
 import './Comment.scss'
 import { CommentProps } from '../../utils/interfaces';
 import axios from 'axios';
@@ -9,7 +9,7 @@ function Comment({ id, name, timestamp, comment, getVideoById, currentVideo }: C
     
     const handleDelete = (id: string) => {
         axios
-            .delete(`http://localhost:8085/videos/${currentVideo!.id}/comments/${id}`)
+            .delete(`${apiURL}/videos/${currentVideo!.id}/comments/${id}`)
             .then(() => {
                 getVideoById(currentVideo!.id)
             })

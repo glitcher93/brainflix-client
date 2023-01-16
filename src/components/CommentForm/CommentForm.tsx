@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { CommentBody, CommentFormProps } from '../../utils/interfaces';
+import { apiURL } from '../../utils/utils';
 import Btn from '../Btn';
 import './CommentForm.scss'
 
@@ -11,7 +12,7 @@ function CommentForm({ avatarImg, addImg, currentVideo, getVideoById }: CommentF
 
     const postComment = (commentObj: CommentBody) => {
         axios
-            .post(`http://localhost:8085/videos/${currentVideo!.id}/comments`, commentObj)
+            .post(`${apiURL}/videos/${currentVideo!.id}/comments`, commentObj)
             .then(() => {
                 getVideoById(currentVideo!.id)
             })

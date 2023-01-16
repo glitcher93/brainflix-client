@@ -1,9 +1,9 @@
 import axios from "axios";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import VideoMain from "../../components/VideoMain";
 import { CommentObject, ReducedVideoDetails, VideoObject } from "../../utils/interfaces";
-import { compareTime } from "../../utils/utils";
+import { apiURL, compareTime } from "../../utils/utils";
 
 const VideoPage = () => {
 
@@ -15,7 +15,7 @@ const VideoPage = () => {
 
     const getAllVideosAndCurrent = () => {
         axios
-            .get(`http://localhost:8085/videos`)
+            .get(`${apiURL}/videos`)
             .then(({data: videoDetails}) => {
                 setVideoDetails(videoDetails);
                 let videoId = id || videoDetails[0].id;
@@ -26,7 +26,7 @@ const VideoPage = () => {
 
     const getVideoById = (id: string) => {
         axios
-            .get(`http://localhost:8085/videos/${id}`)
+            .get(`${apiURL}/videos/${id}`)
             .then(({data: currentVideo}) => {
                 setCurrentVideo(currentVideo)
                 currentVideo.comments.sort(compareTime)

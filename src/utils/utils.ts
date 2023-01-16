@@ -1,5 +1,7 @@
 import { CommentObject } from "./interfaces";
 
+export const apiURL = import.meta.env.VITE_API_URL || 'http://localhost:8085'
+
 export let timeSince = (date: number) => {
     const newDate: any = new Date();
     let seconds = Math.floor((newDate - date) / 1000);
